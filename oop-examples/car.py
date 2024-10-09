@@ -2,6 +2,7 @@ import random
 
 
 class Car:
+
     engine = "electric_engine"
 
     def __init__(self, manufacturer, model):
