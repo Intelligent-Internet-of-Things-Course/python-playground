@@ -9,7 +9,7 @@ iotDevice = IoTDevice("device-0001", "acme-inc", "v0.0.1-beta", 44.101010, 10.42
 print(iotDevice)
 
 serviceMessage = ServiceMessage("CREATE-DEVICE", iotDevice)
-msgFromClient = serviceMessage.to_json();
+msgFromClient = serviceMessage.to_json()
 print(msgFromClient)
 
 bytesToSend = str.encode(msgFromClient)
