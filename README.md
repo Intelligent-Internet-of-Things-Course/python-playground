@@ -39,7 +39,8 @@ examples organized into progressive tracks, one concept per folder. Every
 
 - **[`03-smart-home/`](03-smart-home/)** — the OOP capstone: a Smart Home IoT case
   study built incrementally, step by step, ending in a production-style `src/`
-  project layout (full walk-through further down in this README).
+  project layout — see its own [README](03-smart-home/README.md) for the scenario
+  and the full step-by-step walk-through.
   - [`step-1-devices/`](03-smart-home/step-1-devices/)
   - [`step-2-data-manager/`](03-smart-home/step-2-data-manager/)
   - [`step-3-smart-home/`](03-smart-home/step-3-smart-home/)
@@ -177,45 +178,3 @@ The examples run from any editor, but VS Code adds one-click run and a debugger.
 4. **Debug**: click in the gutter left of a line number to set a breakpoint,
    press `F5`, and choose **Python File** the first time. You get the variables
    pane, call stack, watch, and step controls (`F10` step over, `F11` step into).
-
----
-
-## `03-smart-home/` — the Smart Home IoT case study
-
-### The scenario
-
-The proposed modeling is associated with a **Smart Home** equipped with various
-IoT devices:
-
-- Temperature sensors
-- Humidity sensors
-- Smart lights
-
-The exercise consists of designing the data structures, identifying the classes
-needed to model these devices — and implementing them in Python — and building a
-**central system** that collects and manages the data coming from all of them.
-The Smart Home itself is identified by an id and a location
-(latitude/longitude), and keeps a list of connected devices it can add to,
-remove from, and list.
-
-### Why it's incremental, and how
-
-Every `step-N-*/` folder is **runnable on its own**. Each step copies forward,
-**unchanged**, the device files from the step before it, and adds exactly **one**
-new modeling decision on top — nothing already built is ever rewritten or removed.
-That means `diff`-ing two consecutive step folders shows precisely the one new
-concept that step introduces, which is the point of walking through them live.
-
-| Step | Builds on | Adds | Concept |
-|---|---|---|---|
-| `step-1-devices/` | — | `Device` → `Sensor` / `Actuator` → `TemperatureSensor`, `HumiditySensor`, `SmartLight`, each with its own id, manufacturer, and last reading/status | the class hierarchy, and the informal interfaces `update_value()` / `invoke_action()` |
-| `step-2-data-manager/` | step 1's device files, verbatim | `DataManager` — pulls device storage *out* of the home | delegation / separation of concerns |
-| `step-3-smart-home/` | step 2's files, verbatim | `SmartHome` — the central system: home id + location, delegating every device operation to the `DataManager`; a full monitoring scenario | composing the whole system |
-| `step-4-patterns/` | step 3's files, verbatim | **Singleton** (one shared `DataManager`), **Factory** (`DeviceFactory`, plus a new `SmartLock` added with one class + one branch), **Observer** (a dashboard and a logger notified of state changes) | design patterns on top of the same model |
-| `step-5-src-layout/` | the step-4 system, reorganized | the same classes split into a real `devices/ storage/ logic/ interface/` package, driven by a YAML config file, with logging and type hints throughout | production-style project layout |
-
-Run order matches the table — `python3 main.py` inside each `step-N-*/` folder in
-turn (`step-5-src-layout/` instead uses `python3 run.py`; see its own
-[README](03-smart-home/step-5-src-layout/README.md), since it is meant to be lifted
-into its own repository later).
-
