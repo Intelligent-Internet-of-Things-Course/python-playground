@@ -19,23 +19,24 @@ examples organized into progressive tracks, one concept per folder. Every
 
 - **[`01-best-practices/`](01-best-practices/)** — Python habits that apply to
   any code, OOP or not: the `__main__` guard, exceptions, type hints,
-  configuration, logging.
-  - [`01-main-guard/`](01-best-practices/01-main-guard/) — `if __name__ == "__main__"`, run vs import, the `main()` pattern
-  - [`02-exceptions/`](01-best-practices/02-exceptions/) — `try` / `except` / `else` / `finally`, several handlers, a custom `Exception`
-  - [`03-type-hints/`](01-best-practices/03-type-hints/) — three type bugs that crash far from their cause, then hints as documentation + `isinstance()` as the real check
-  - [`04-config/`](01-best-practices/04-config/) — moving values out of the code: `argparse`, environment variables, JSON / YAML config files
-  - [`05-logging/`](01-best-practices/05-logging/) — `logging` instead of `print()`: severity levels, threshold filtering, output to a file
+  configuration, logging — see its own [README](01-best-practices/README.md).
+  - [`01-main-guard/`](01-best-practices/01-main-guard/)
+  - [`02-exceptions/`](01-best-practices/02-exceptions/)
+  - [`03-type-hints/`](01-best-practices/03-type-hints/)
+  - [`04-config/`](01-best-practices/04-config/)
+  - [`05-logging/`](01-best-practices/05-logging/)
 
 - **[`02-oop/`](02-oop/)** — object-oriented Python, one pillar per folder: from
-  `class` syntax up to encapsulation, inheritance, polymorphism and abstraction.
-  - [`01-class-basics/`](02-oop/01-class-basics/) — `class`, `__init__`, `self`, instance attributes; identity vs equality; a missing required argument raises `TypeError`, default parameter values fix it
-  - [`02-methods-dunder/`](02-oop/02-methods-dunder/) — instance methods and dunder methods: `__str__`, `__eq__`, `__new__`, `__del__`
-  - [`03-class-static-methods/`](02-oop/03-class-static-methods/) — class attributes, `@classmethod` + `cls`, `@staticmethod`, an alternative constructor; plus two class-attribute pitfalls (a shared mutable list, an accidentally-shadowed counter) and why Python has no real constants
-  - [`04-encapsulation/`](02-oop/04-encapsulation/) — public / protected / private by convention (incl. name mangling), plain getters/setters, then `@property` / `.setter` / `.deleter`
-  - [`05-inheritance/`](02-oop/05-inheritance/) — `super()`, method overriding, `type()` / `isinstance()`; multilevel and multiple inheritance; the MRO, including a real name conflict between two parents
-  - [`06-polymorphism/`](02-oop/06-polymorphism/) — duck typing (`len`, `max`, and your own functions/classes), operator polymorphism, class-based polymorphism across unrelated classes, polymorphism via overriding inside a hierarchy (dynamic dispatch, the Open/Closed Principle), no method overloading (a redefinition silently replaces the old one), `*args` and default parameter values as the two replacements
-  - [`07-abstraction/`](02-oop/07-abstraction/) — informal interface (`NotImplementedError`) vs `abc.ABC` + `@abstractmethod`; mixing abstract and concrete methods in the same `ABC`
-  - [`08-custom-exceptions/`](02-oop/08-custom-exceptions/) — a domain-specific exception (`BatteryLowError`) carrying structured data
+  `class` syntax up to encapsulation, inheritance, polymorphism and abstraction —
+  see its own [README](02-oop/README.md).
+  - [`01-class-basics/`](02-oop/01-class-basics/)
+  - [`02-methods-dunder/`](02-oop/02-methods-dunder/)
+  - [`03-class-static-methods/`](02-oop/03-class-static-methods/)
+  - [`04-encapsulation/`](02-oop/04-encapsulation/)
+  - [`05-inheritance/`](02-oop/05-inheritance/)
+  - [`06-polymorphism/`](02-oop/06-polymorphism/)
+  - [`07-abstraction/`](02-oop/07-abstraction/)
+  - [`08-custom-exceptions/`](02-oop/08-custom-exceptions/)
 
 - **[`03-smart-home/`](03-smart-home/)** — the OOP capstone: a Smart Home IoT case
   study built incrementally, step by step, ending in a production-style `src/`
@@ -48,10 +49,11 @@ examples organized into progressive tracks, one concept per folder. Every
   - [`step-5-src-layout/`](03-smart-home/step-5-src-layout/)
 
 - **[`04-networking/`](04-networking/)** — UDP/TCP sockets and JSON-over-TCP,
-  refactored to use the best practices above.
-  - [`udp/`](04-networking/udp/) — `udp_server.py` + `udp_client.py` — connectionless echo
-  - [`tcp/`](04-networking/tcp/) — `tcp_server.py` + `tcp_client.py` — connection-oriented echo
-  - [`json/`](04-networking/json/) — an `IoTDevice` / `ServiceMessage` model sent as JSON over TCP; nested-object serialization and rebuild
+  refactored to use the best practices above — see its own
+  [README](04-networking/README.md).
+  - [`udp/`](04-networking/udp/)
+  - [`tcp/`](04-networking/tcp/)
+  - [`json/`](04-networking/json/)
 
 
 Nothing here needs a third-party package except two spots that need `PyYAML` —
