@@ -52,16 +52,6 @@ examples organized into progressive tracks, one concept per folder. Every
   - [`tcp/`](04-networking/tcp/) — `tcp_server.py` + `tcp_client.py` — connection-oriented echo
   - [`json/`](04-networking/json/) — an `IoTDevice` / `ServiceMessage` model sent as JSON over TCP; nested-object serialization and rebuild
 
-## Suggested order
-
-1. `01-best-practices/01` → `03` — the habits used throughout every other track
-   (the `if __name__ == "__main__"` guard, exceptions, and type hints — every
-   `02-oop/`, `03-smart-home/` and `04-networking/` file is annotated).
-2. `02-oop/01` → `08` — the four OOP pillars, one folder each.
-3. `03-smart-home/step-1` → `step-5` — the IoT case study, built up incrementally,
-   ending in a real `src/` project layout.
-4. `01-best-practices/04` → `05` — configuration, logging.
-5. `04-networking/` — UDP, TCP and JSON-over-TCP.
 
 Nothing here needs a third-party package except two spots that need `PyYAML` —
 see [Setup](#setup).
