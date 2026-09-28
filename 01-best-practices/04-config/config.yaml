@@ -1,0 +1,5 @@
+# Human-friendly config: comments allowed, less punctuation.
+# Needs PyYAML:  pip install pyyaml   (see repo-root requirements.txt)
+device_id: sensor_1
+sample_rate_seconds: 5   # how often to read the sensor
+debug: false

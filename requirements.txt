@@ -1,0 +1,13 @@
+# Third-party packages used by the hands-on examples.
+# The OOP track and most best-practices steps need NOTHING from here
+# (standard library only). These are required only by:
+#   best-practices/04-config/config_file.py yaml   -> PyYAML
+#   best-practices/04-config (optional .env demo)  -> python-dotenv
+#
+# Install into an activated virtual environment:
+#   python3 -m venv .venv
+#   source .venv/bin/activate      # Windows: .venv\Scripts\activate
+#   pip install -r requirements.txt
+
+PyYAML>=6.0,<7.0
+python-dotenv~=1.0

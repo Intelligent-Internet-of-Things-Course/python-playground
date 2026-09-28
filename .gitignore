@@ -5,6 +5,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Idea IDE files
+.idea/
+
 # C extensions
 *.so
 
@@ -150,3 +153,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# Exclude Claude folder
+.claude/

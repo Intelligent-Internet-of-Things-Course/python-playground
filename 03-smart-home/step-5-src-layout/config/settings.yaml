@@ -1,0 +1,6 @@
+# Smart Home settings (python_best_practices.md 5.4).
+# Loaded by interface/cli.py via yaml.safe_load().
+home_id: home_1
+latitude: 44.7950
+longitude: 10.3308      # Reggio Emilia
+temperature_threshold: 26.0   # above this, automation turns the light on

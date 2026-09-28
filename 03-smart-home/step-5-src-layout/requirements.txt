@@ -1,0 +1,7 @@
+# Dependencies for the Smart Home IoT case study.
+# Install into an activated virtual environment:
+#   python3 -m venv .venv
+#   source .venv/bin/activate        # Windows: .venv\Scripts\activate
+#   pip install -r requirements.txt
+
+PyYAML>=6.0,<7.0
